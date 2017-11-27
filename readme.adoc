@@ -3,10 +3,24 @@
 === Links
 
 * https://github.com/jonashackt/spring-boot-vuejs
+* https://medium.com/reverdev/why-we-moved-from-angular-2-to-vue-js-and-why-we-didnt-choose-react-ef807d9f4163
+* https://scotch.io/tutorials/how-to-write-a-unit-test-for-vuejs
 
 === how to run
 
 ----
+# compile all modules from root :
 mvn clean install
 java -jar backend/target/backend-1.0-SNAPSHOT.jar
+# then go to localhost:8088
+----
+
+=== How to dev
+
+----
+# start backend, go to backend module and run :
+mvn spring-boot:run
+# start frontend, go to frontend module and run :
+npm run dev
+# then go to localhost:8080
 ----
