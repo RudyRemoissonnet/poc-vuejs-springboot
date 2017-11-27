@@ -1,12 +1,13 @@
 <template>
   <div>
-    <h1>Details</h1>
+    <h1>{{ item.name }}</h1>
     <p></p>
     <dl>
       <dt>Id</dt><dd>{{ item.id }}</dd>
       <dt>Nom</dt><dd>{{ item.name }}</dd>
       <dt>Skill</dt><dd>{{ item.skill }}</dd>
     </dl>
+    <b-button variant="primary" @click="goBack()">Retour</b-button>
   </div>
 </template>
 
@@ -26,9 +27,6 @@
     },
     methods: {
       callRestHeroesDetail () {
-//        item = {name: 'Bart', skill: 'Drink'}
-//        $route.params.id
-
         AXIOS.get('api/heroes/' + this.$route.params.id)
           .then(response => {
             this.item = response.data
@@ -37,7 +35,9 @@
           .catch(e => {
             this.errors.push(e)
           })
-//
+      },
+      goBack () {
+        this.$router.go(-1)
       }
     },
     created () {
