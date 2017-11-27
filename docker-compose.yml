@@ -1,0 +1,26 @@
+version: '2'
+
+volumes:
+  javadata:
+  intellijdata:
+
+services:
+
+  ide:
+    image: multimediabs/intellij-ultimate
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${HOME}/.ssh:/home/developer/.ssh
+      - ${HOME}/.gitconfig:/home/developer/.gitconfig
+      - .:/home/developer/src/poc-vuejs-springboot
+      - intellijdata:/home/developer/.IntelliJIdea
+      - javadata:/home/developer/.java
+    environment:
+      - DISPLAY
+      - LANG
+      - LANGUAGE
+      - TERM
+      - TZ="Europe/Paris"
+      - PATH=/home/developer/src/poc-vuejs-springboot/frontend/bin:/home/developer/src/poc-vuejs-springboot/frontend/node:/home/developer/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    ports:
+      - "8080-8090:8080-8090"
