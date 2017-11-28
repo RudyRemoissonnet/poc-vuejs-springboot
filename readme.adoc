@@ -30,3 +30,7 @@ chromium-browser --no-sandbox http://localhost:8080
 === Browser developer tools extension
 
 Install vue-devtools Browser extension https://github.com/vuejs/vue-devtools and get better feedback, e.g. in Chrome:
+
+[NOTE]
+This is an example
+single-paragraph note.
