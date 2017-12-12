@@ -2,6 +2,7 @@ version: '2'
 
 volumes:
   javadata:
+  mavendata:
   intellijdata:
 
 services:
@@ -12,9 +13,10 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ${HOME}/.ssh:/home/developer/.ssh
       - ${HOME}/.gitconfig:/home/developer/.gitconfig
-      - .:/home/developer/src/poc-vuejs-springboot
-      - intellijdata:/home/developer/.IntelliJIdea
       - javadata:/home/developer/.java
+      - mavendata:/home/developer/.m2/repository
+      - intellijdata:/home/developer/.IntelliJIdea
+      - ../:/home/developer/src/
     environment:
       - DISPLAY
       - LANG
